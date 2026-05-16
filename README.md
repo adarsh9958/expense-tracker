@@ -17,11 +17,6 @@
 
 </div>
 
----
-
-## 📸 Preview
-
-> Dashboard with dark/light mode, charts, and transaction management
 
 ---
 
