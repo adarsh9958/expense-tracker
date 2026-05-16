@@ -21,6 +21,7 @@ app.use(cors({
   origin: [
     'http://localhost:5173',
     'http://localhost:3000',
+    'https://expenseiq-two.vercel.app',
     process.env.FRONTEND_URL,
   ].filter(Boolean),
   credentials: true,
