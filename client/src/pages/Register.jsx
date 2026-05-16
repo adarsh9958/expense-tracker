@@ -34,20 +34,34 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-[#13131f] dark:via-[#1e1e2e] dark:to-[#13131f] flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center p-4"
+      style={{
+        background: 'linear-gradient(135deg, #0a0a0f 0%, #111118 40%, #1a0a2e 100%)'
+      }}>
       <div className="w-full max-w-md">
+
+        {/* Logo + heading */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-14 h-14 bg-indigo-600 rounded-2xl mb-4 shadow-lg shadow-indigo-500/30">
+          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl mb-4"
+            style={{ background: 'linear-gradient(135deg, #7c3aed, #6d28d9)', boxShadow: '0 4px 20px rgba(124,58,237,0.5)' }}>
             <Wallet className="w-7 h-7 text-white" />
           </div>
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Create account</h1>
-          <p className="text-gray-500 dark:text-gray-400 mt-1">Start tracking your expenses today</p>
+          <h1 className="text-2xl font-bold text-white">Create account</h1>
+          <p className="mt-1 text-sm" style={{ color: '#94a3b8' }}>Start tracking your expenses today</p>
         </div>
 
-        <div className="bg-white dark:bg-[#1e1e2e] rounded-2xl shadow-xl border border-gray-100 dark:border-[#2e2e42] p-8">
+        {/* Card */}
+        <div style={{
+          background: 'rgba(26, 26, 46, 0.8)',
+          backdropFilter: 'blur(20px)',
+          border: '1px solid rgba(139, 92, 246, 0.25)',
+          borderRadius: '1.25rem',
+          padding: '2rem',
+          boxShadow: '0 25px 50px rgba(0,0,0,0.5)'
+        }}>
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Full Name</label>
+              <label className="block text-sm font-medium mb-1.5" style={{ color: '#c4b5fd' }}>Full Name</label>
               <input
                 type="text"
                 name="name"
@@ -60,7 +74,7 @@ export default function Register() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Email</label>
+              <label className="block text-sm font-medium mb-1.5" style={{ color: '#c4b5fd' }}>Email</label>
               <input
                 type="email"
                 name="email"
@@ -73,7 +87,7 @@ export default function Register() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Password</label>
+              <label className="block text-sm font-medium mb-1.5" style={{ color: '#c4b5fd' }}>Password</label>
               <div className="relative">
                 <input
                   type={showPassword ? 'text' : 'password'}
@@ -87,7 +101,8 @@ export default function Register() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 transition-colors"
+                  style={{ color: '#7c3aed' }}
                 >
                   {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                 </button>
@@ -97,21 +112,22 @@ export default function Register() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full btn-primary py-3 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full btn-primary py-3 justify-center disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              {loading ? (
-                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-              ) : 'Create Account'}
+              {loading
+                ? <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                : 'Create Account'}
             </button>
           </form>
 
-          <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-6">
+          <p className="text-center text-sm mt-6" style={{ color: '#64748b' }}>
             Already have an account?{' '}
-            <Link to="/login" className="text-indigo-600 dark:text-indigo-400 font-medium hover:underline">
+            <Link to="/login" className="font-medium hover:underline" style={{ color: '#a78bfa' }}>
               Sign in
             </Link>
           </p>
         </div>
+
       </div>
     </div>
   );

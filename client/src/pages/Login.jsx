@@ -30,7 +30,10 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-[#13131f] dark:via-[#1e1e2e] dark:to-[#13131f] flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center p-4"
+  style={{
+    background: 'linear-gradient(135deg, #0a0a0f 0%, #111118 40%, #1a0a2e 100%)'
+  }}>
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
@@ -42,7 +45,14 @@ export default function Login() {
         </div>
 
         {/* Card */}
-        <div className="bg-white dark:bg-[#1e1e2e] rounded-2xl shadow-xl border border-gray-100 dark:border-[#2e2e42] p-8">
+        <div style={{
+          background: 'rgba(26, 26, 46, 0.8)',
+          backdropFilter: 'blur(20px)',
+          border: '1px solid rgba(139, 92, 246, 0.25)',
+          borderRadius: '1.25rem',
+          padding: '2rem',
+          boxShadow: '0 25px 50px rgba(0,0,0,0.5)'
+        }}>
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Email</label>
