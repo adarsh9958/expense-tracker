@@ -192,6 +192,12 @@ expense-tracker/
 
 ---
 
+## 🔒 Security Note
+All credentials are managed via environment variables.
+Database credentials visible in early commits have been rotated and are no longer valid.
+
+---
+
 ## 👨‍💻 Author
 
 **Adarsh Pathak**
